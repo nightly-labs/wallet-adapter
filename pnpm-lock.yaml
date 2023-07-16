@@ -367,7 +367,7 @@ importers:
         version: 18.2.6
       parcel:
         specifier: ^2.9.2
-        version: 2.9.2
+        version: 2.9.2(postcss@8.4.24)
       prettier:
         specifier: ^2.8.8
         version: 2.8.8
@@ -432,6 +432,9 @@ importers:
 
   packages/starter/react-ui-starter:
     dependencies:
+      '@nightlylabs/wallet-selector-solana':
+        specifier: ^0.1.0
+        version: 0.1.0(bs58@4.0.1)(react@18.2.0)
       '@solana/wallet-adapter-base':
         specifier: workspace:^
         version: link:../../core/base
@@ -462,7 +465,7 @@ importers:
         version: 18.2.6
       parcel:
         specifier: ^2.9.2
-        version: 2.9.2
+        version: 2.9.2(postcss@8.4.24)
       prettier:
         specifier: ^2.8.8
         version: 2.8.8
@@ -4902,7 +4905,7 @@ packages:
       - '@parcel/core'
     dev: true
 
-  /@parcel/config-default@2.9.2(@parcel/core@2.9.2):
+  /@parcel/config-default@2.9.2(@parcel/core@2.9.2)(postcss@8.4.24):
     resolution: {integrity: sha512-dRqUKn6YIKTxvKbfO5xfxzMhOMWMCNoZzEWuP/bESW6zXI8krdGmgdu6HxSfCmvPnkz+0SAz8ig2QnjV0KtCcw==}
     peerDependencies:
       '@parcel/core': ^2.9.2
@@ -4912,7 +4915,7 @@ packages:
       '@parcel/core': 2.9.2
       '@parcel/namer-default': 2.9.2(@parcel/core@2.9.2)
       '@parcel/optimizer-css': 2.9.2(@parcel/core@2.9.2)
-      '@parcel/optimizer-htmlnano': 2.9.2(@parcel/core@2.9.2)
+      '@parcel/optimizer-htmlnano': 2.9.2(@parcel/core@2.9.2)(postcss@8.4.24)
       '@parcel/optimizer-image': 2.9.2(@parcel/core@2.9.2)
       '@parcel/optimizer-svgo': 2.9.2(@parcel/core@2.9.2)
       '@parcel/optimizer-swc': 2.9.2(@parcel/core@2.9.2)
@@ -5081,12 +5084,12 @@ packages:
       - '@parcel/core'
     dev: true
 
-  /@parcel/optimizer-htmlnano@2.9.2(@parcel/core@2.9.2):
+  /@parcel/optimizer-htmlnano@2.9.2(@parcel/core@2.9.2)(postcss@8.4.24):
     resolution: {integrity: sha512-PfZ5bK9Xh5Yi6B++cilRDslSnkkzoEldGAAQ4qeX1njT6/VmQcOsG+ZV1lA344sXogu9nhmdjl+TVbpxzrs+Og==}
     engines: {node: '>= 12.0.0', parcel: ^2.9.2}
     dependencies:
       '@parcel/plugin': 2.9.2(@parcel/core@2.9.2)
-      htmlnano: 2.0.4(svgo@2.8.0)
+      htmlnano: 2.0.4(postcss@8.4.24)(svgo@2.8.0)
       nullthrows: 1.1.1
       posthtml: 0.16.6
       svgo: 2.8.0
@@ -11488,7 +11491,7 @@ packages:
       webpack: 5.88.0
     dev: false
 
-  /htmlnano@2.0.4(svgo@2.8.0):
+  /htmlnano@2.0.4(postcss@8.4.24)(svgo@2.8.0):
     resolution: {integrity: sha512-WGCkyGFwjKW1GeCBsPYacMvaMnZtFJ0zIRnC2NCddkA+IOEhTqskXrS7lep+3yYZw/nQ3dW1UAX4yA/GJyR8BA==}
     peerDependencies:
       cssnano: ^6.0.0
@@ -11518,6 +11521,7 @@ packages:
         optional: true
     dependencies:
       cosmiconfig: 8.2.0
+      postcss: 8.4.24
       posthtml: 0.16.6
       svgo: 2.8.0
       timsort: 0.3.0
@@ -14433,7 +14437,6 @@ packages:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
-    dev: false
 
   /natural-compare-lite@1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
@@ -14944,7 +14947,7 @@ packages:
       tslib: 2.5.3
     dev: false
 
-  /parcel@2.9.2:
+  /parcel@2.9.2(postcss@8.4.24):
     resolution: {integrity: sha512-nTpT/0JIhGW5rKXVnVGHyLBFK/KxteqzsSjQNzeGybiBttnIYRXnM03e2QJX0GWqiS9OtM4rJro04DNHoqx3Ug==}
     engines: {node: '>= 12.0.0'}
     hasBin: true
@@ -14952,7 +14955,7 @@ packages:
       '@parcel/core':
         optional: true
     dependencies:
-      '@parcel/config-default': 2.9.2(@parcel/core@2.9.2)
+      '@parcel/config-default': 2.9.2(@parcel/core@2.9.2)(postcss@8.4.24)
       '@parcel/core': 2.9.2
       '@parcel/diagnostic': 2.9.2
       '@parcel/events': 2.9.2
@@ -15990,7 +15993,6 @@ packages:
       nanoid: 3.3.6
       picocolors: 1.0.0
       source-map-js: 1.0.2
-    dev: false
 
   /posthtml-parser@0.10.2:
     resolution: {integrity: sha512-PId6zZ/2lyJi9LiKfe+i2xv57oEjJgWbsHGGANwos5AvdQp98i6AtamAl8gzSVFGfQ43Glb5D614cvZf012VKg==}
