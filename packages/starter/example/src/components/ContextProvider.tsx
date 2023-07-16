@@ -12,6 +12,7 @@ import { SnackbarProvider, useSnackbar } from 'notistack';
 import type { FC, ReactNode } from 'react';
 import React, { useCallback, useMemo } from 'react';
 import { AutoConnectProvider, useAutoConnect } from './AutoConnectProvider';
+import { NightlyConnectAdapter } from '@nightlylabs/wallet-selector-solana';
 
 const theme = createTheme({
     palette: {
@@ -72,6 +73,18 @@ const WalletContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
              * in the npm package `@solana/wallet-adapter-wallets`.
              */
             new UnsafeBurnerWalletAdapter(),
+            NightlyConnectAdapter.buildLazy(
+                {
+                    appMetadata: {
+                        name: 'SolanaAdapter',
+                        description: 'Solana Adapter Test',
+                        icon: 'https://docs.nightly.app/img/logo.png',
+                        additionalInfo: 'Courtesy of Nightly Connect team',
+                    },
+                    url: 'https://nc2.nightly.app',
+                },
+                true
+            ),
         ],
         // eslint-disable-next-line react-hooks/exhaustive-deps
         [network]
