@@ -51,6 +51,9 @@ Yes, see the community-maintained [Angular](https://github.com/heavy-duty/platfo
 ### Svelte
 Yes, see the community-maintained [Svelte](https://github.com/svelte-on-solana/wallet-adapter) package.
 
+### Unity
+Yes, see the community-maintained [Unity](https://github.com/magicblock-labs/Solana.Unity-SDK) package.
+
 ### Webpack / Gatsby
 Yes, but you may need to set up polyfills for certain imported modules.
 
@@ -121,10 +124,10 @@ The signature string returned by this method can be verified using [tweetnacl-js
 This can be used to sign offline — without sending a transaction — and prove a user controls a given private key.
 
 ```tsx
+import { ed25519 } from '@noble/curves/ed25519';
 import { useWallet } from '@solana/wallet-adapter-react';
 import bs58 from 'bs58';
 import React, { FC, useCallback } from 'react';
-import { sign } from 'tweetnacl';
 
 export const SignMessageButton: FC = () => {
     const { publicKey, signMessage } = useWallet();
@@ -141,7 +144,7 @@ export const SignMessageButton: FC = () => {
             // Sign the bytes using the wallet
             const signature = await signMessage(message);
             // Verify that the bytes were signed using the private key that matches the known public key
-            if (!sign.detached.verify(message, signature, publicKey.toBytes())) throw new Error('Invalid signature!');
+            if (!ed25519.verify(signature, message, publicKey.toBytes())) throw new Error('Invalid signature!');
 
             alert(`Message signature: ${bs58.encode(signature)}`);
         } catch (error: any) {
