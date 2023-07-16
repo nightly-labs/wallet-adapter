@@ -244,8 +244,8 @@ importers:
         specifier: ^5.13.5
         version: 5.13.5(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.13)(react-dom@18.2.0)(react@18.2.0)
       '@nightlylabs/wallet-selector-solana':
-        specifier: ^0.1.0
-        version: 0.1.0(bs58@4.0.1)(react@18.2.0)
+        specifier: 0.1.1
+        version: 0.1.1(bs58@4.0.1)(react@18.2.0)
       '@noble/curves':
         specifier: ^1.1.0
         version: 1.1.0
@@ -433,8 +433,8 @@ importers:
   packages/starter/react-ui-starter:
     dependencies:
       '@nightlylabs/wallet-selector-solana':
-        specifier: ^0.1.0
-        version: 0.1.0(bs58@4.0.1)(react@18.2.0)
+        specifier: 0.1.1
+        version: 0.1.1(bs58@4.0.1)(react@18.2.0)
       '@solana/wallet-adapter-base':
         specifier: workspace:^
         version: link:../../core/base
@@ -4806,8 +4806,8 @@ packages:
       - ts-node
     dev: false
 
-  /@nightlylabs/wallet-selector-solana@0.1.0(bs58@4.0.1)(react@18.2.0):
-    resolution: {integrity: sha512-zuiS3WhQMxY12kZXLRokLKszyZ67FLaMIW2f3Yp8vjNr53PYgWWz4e5SkTm+wCD++vpBDkUh81aej8tXB5bXHQ==}
+  /@nightlylabs/wallet-selector-solana@0.1.1(bs58@4.0.1)(react@18.2.0):
+    resolution: {integrity: sha512-92dB7BpqwoJoHapofwvdr2vWTaq4XznzFL6SMRV9vAm5B0nnAyt8z8sA/pD4OKXRIR/i6YH/ovVC9kFmp1CXIQ==}
     dependencies:
       '@nightlylabs/nightly-connect-solana': 0.0.19
       '@nightlylabs/wallet-selector-base': 0.0.13
