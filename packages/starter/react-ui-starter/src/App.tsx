@@ -1,3 +1,4 @@
+import { NightlyConnectAdapter } from '@nightlylabs/wallet-selector-solana';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletModalProvider, WalletMultiButton } from '@solana/wallet-adapter-react-ui';
@@ -36,6 +37,18 @@ const Context: FC<{ children: ReactNode }> = ({ children }) => {
              * in the npm package `@solana/wallet-adapter-wallets`.
              */
             new UnsafeBurnerWalletAdapter(),
+            NightlyConnectAdapter.buildLazy(
+                {
+                    appMetadata: {
+                        name: 'SolanaAdapter',
+                        description: 'Solana Adapter Test',
+                        icon: 'https://docs.nightly.app/img/logo.png',
+                        additionalInfo: 'Courtesy of Nightly Connect team',
+                    },
+                    url: 'https://nc2.nightly.app',
+                },
+                true
+            ),
         ],
         // eslint-disable-next-line react-hooks/exhaustive-deps
         [network]
